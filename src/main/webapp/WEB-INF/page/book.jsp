@@ -1,8 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="paginator"
-	uri="http://corporation.com/custom-tag/paginator"%>
+<%@ taglib prefix="paginator" uri="http://corporation.com/custom-tag/paginator"%>
 
 <!DOCTYPE html>
 
@@ -33,14 +32,14 @@ th, td {
 			<th width="45%">Description</th>
 		</tr>
 
-		<c:forEach var="book" items="${booksView.currentViewBooks}" >
+		<c:forEach var="book" items="${booksView.currentViewBooks}">
 			<tr>
 				<td>${book.id}</td>
 				<td>${book.author}</td>
 				<td>${book.title}</td>
 				<td>${book.genre}</td>
 				<td>${book.price}</td>
-				<fmt:formatDate value="${book.publishDate}" var="book_formatted_date" pattern="dd-MM-yyyy" />
+				<fmt:formatDate value="${book.publishDate}"	var="book_formatted_date" pattern="dd-MM-yyyy" />
 				<td>${book_formatted_date}</td>
 				<td>${book.description}</td>
 			</tr>
@@ -48,10 +47,11 @@ th, td {
 	</table>
 
 	<div align="center">
-		<paginator:display currentPage="${booksView.currentPage}" totalPageCount="${booksView.totalPageCount}" viewPageCount="4" urlPattern="show_books" />
+		<paginator:display currentPage="${booksView.currentPage}" totalPageCount="${booksView.totalPageCount}" 
+			viewPageCount="4" urlPattern="show_books" />
 	</div>
 
 	<a href="index.jsp">To home page</a>
-	
+
 </body>
 </html>
