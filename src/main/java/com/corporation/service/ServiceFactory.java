@@ -5,8 +5,6 @@ import com.corporation.service.impl.XmlParserServiceImpl;
 public class ServiceFactory {
 
     private static final ServiceFactory instance = new ServiceFactory();
-    // private static final XmlParserService xmlParserService = new
-    // XmlParserServiceImpl();
 
     private ServiceFactory() {
     }

@@ -39,7 +39,7 @@ th, td {
 				<td>${book.title}</td>
 				<td>${book.genre}</td>
 				<td>${book.price}</td>
-				<fmt:formatDate value="${book.publishDate}"	var="book_formatted_date" pattern="dd-MM-yyyy" />
+				<fmt:formatDate value="${book.publishDate}" var="book_formatted_date" pattern="dd-MM-yyyy" />
 				<td>${book_formatted_date}</td>
 				<td>${book.description}</td>
 			</tr>
