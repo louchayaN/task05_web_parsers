@@ -1,5 +1,6 @@
 package com.corporation.dao;
 
+import com.corporation.dao.exception.UnsupportedParserTypeDaoException;
 import com.corporation.dao.impl.DOMParserDaoImpl;
 import com.corporation.dao.impl.SAXParserDaoImpl;
 import com.corporation.dao.impl.StAXParserDaoImpl;
@@ -15,7 +16,7 @@ public class DAOFactory {
         return instance;
     }
 
-    public XmlParserDao getParser(String parserType) {
+    public XmlParserDao getParser(String parserType) throws UnsupportedParserTypeDaoException {
         switch (parserType) {
         case "SAX":
             return new SAXParserDaoImpl();
@@ -23,8 +24,9 @@ public class DAOFactory {
             return new StAXParserDaoImpl();
         case "DOM":
             return new DOMParserDaoImpl();
+        default:
+            throw new UnsupportedParserTypeDaoException("An attempt to create xml parser of the unsupported type");
         }
-        return null;
     }
 
 }

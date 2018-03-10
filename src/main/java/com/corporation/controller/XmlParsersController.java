@@ -16,14 +16,16 @@ import com.corporation.entity.BooksView;
 import com.corporation.service.ServiceFactory;
 import com.corporation.service.XmlParserService;
 import com.corporation.service.exception.IncorrectDateFormatServiceException;
+import com.corporation.service.exception.UnsupportedParserTypeServiceException;
 import com.corporation.service.exception.XmlParsingServiceException;
 
 public class XmlParsersController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    private static final String VIEW_PAGE = "/WEB-INF/page/book.jsp";
-    private static final String ERROR_PAGE = "/WEB-INF/page/error-page.jsp";
+    private static final String BOOKS_VIEW_PAGE = "/WEB-INF/jsp/book.jsp";
+    private static final String ERROR_PAGE_404 = "/WEB-INF/jsp/error-page-404.jsp";
+    private static final String ERROR_PAGE_503 = "/WEB-INF/jsp/error-page-503.jsp";
 
     private static final Logger LOGGER = LogManager.getLogger(XmlParsersController.class);
 
@@ -46,16 +48,20 @@ public class XmlParsersController extends HttpServlet {
             BooksView booksView = parser.getBooksForPage(currentPage);
             session.setAttribute("booksView", booksView);
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher(VIEW_PAGE);
+            RequestDispatcher dispatcher = request.getRequestDispatcher(BOOKS_VIEW_PAGE);
             dispatcher.forward(request, response);
 
         } catch (IncorrectDateFormatServiceException e) {
             LOGGER.warn(
                     "Exception occurred during parsing date. Date format for section 'date' in parsing xml file was choosed incorrectly. "
                             + "The date field of Book ojects will be null");
+        } catch (UnsupportedParserTypeServiceException e) {
+            LOGGER.error("Incorrect parser type was choosed");
+            RequestDispatcher dispatcher = request.getRequestDispatcher(ERROR_PAGE_404);
+            dispatcher.forward(request, response);
         } catch (XmlParsingServiceException e) {
             LOGGER.error("Xml file with nessery date haven't been read correctly");
-            RequestDispatcher dispatcher = request.getRequestDispatcher(ERROR_PAGE);
+            RequestDispatcher dispatcher = request.getRequestDispatcher(ERROR_PAGE_503);
             dispatcher.forward(request, response);
         }
     }

@@ -5,11 +5,13 @@ import java.util.List;
 import com.corporation.dao.DAOFactory;
 import com.corporation.dao.XmlParserDao;
 import com.corporation.dao.exception.IncorrectDateFormatDaoException;
+import com.corporation.dao.exception.UnsupportedParserTypeDaoException;
 import com.corporation.dao.exception.XmlParsingDaoException;
 import com.corporation.entity.Book;
 import com.corporation.entity.BooksView;
 import com.corporation.service.XmlParserService;
 import com.corporation.service.exception.IncorrectDateFormatServiceException;
+import com.corporation.service.exception.UnsupportedParserTypeServiceException;
 import com.corporation.service.exception.XmlParsingServiceException;
 
 public class XmlParserServiceImpl implements XmlParserService {
@@ -23,7 +25,8 @@ public class XmlParserServiceImpl implements XmlParserService {
     }
 
     @Override
-    public BooksView getBooksForPage(int currentPage) throws XmlParsingServiceException, IncorrectDateFormatServiceException {
+    public BooksView getBooksForPage(int currentPage) throws XmlParsingServiceException,
+            IncorrectDateFormatServiceException, UnsupportedParserTypeServiceException {
         try {
             DAOFactory daoFactory = DAOFactory.getInstance();
             XmlParserDao parser = daoFactory.getParser(parserType);
@@ -46,6 +49,8 @@ public class XmlParserServiceImpl implements XmlParserService {
         } catch (IncorrectDateFormatDaoException e) {
             throw new IncorrectDateFormatServiceException(
                     "Date format for section 'date' in parsing xml file was choosed incorrectly", e);
+        } catch (UnsupportedParserTypeDaoException e) {
+            throw new UnsupportedParserTypeServiceException("Attempt to create xml parser of the unsupported type", e);
         }
     }
 

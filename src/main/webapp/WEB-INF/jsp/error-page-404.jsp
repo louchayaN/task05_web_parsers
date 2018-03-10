@@ -9,9 +9,9 @@
 </head>
 <body>
 
-	<div> 
-		503
-		Looks like we're having some server issues.
+	<div align="center"> 
+		<h1>404</h1>
+		<h2>Oops, the page you're looking for does not exist.</h2>	
 	</div>
 
 </body>
