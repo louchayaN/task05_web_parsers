@@ -45,7 +45,6 @@ public class DOMParserDaoImpl implements XmlParserDao {
         } catch (ParserConfigurationException | SAXException | IOException e) {
             throw new XmlParsingDaoException("Exception occurred during reading the xml file", e);
         }
-
     }
 
     private String getSingleChildContent(Element element, String childName) {
