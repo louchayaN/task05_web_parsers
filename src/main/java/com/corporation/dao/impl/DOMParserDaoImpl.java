@@ -35,37 +35,17 @@ public class DOMParserDaoImpl implements XmlParserDao {
             Element root = document.getDocumentElement();
 
             List<Book> bookCatalog = new ArrayList<>();
-            Book book = null;
 
             NodeList bookNodes = root.getElementsByTagName("book");
             for (int i = 0; i < bookNodes.getLength(); i++) {
-                book = new Book();
                 Element bookElement = (Element) bookNodes.item(i);
-                int bookId = Integer.parseInt(bookElement.getAttribute("id"));
-                book.setId(bookId);
-                String author = getSingleChildContent(bookElement, "author");
-                book.setAuthor(author);
-                String title = getSingleChildContent(bookElement, "title");
-                book.setTitle(title);
-                String genre = getSingleChildContent(bookElement, "genre");
-                book.setGenre(genre);
-                String price = getSingleChildContent(bookElement, "price");
-                book.setPrice(Double.parseDouble(price));
-                String date = getSingleChildContent(bookElement, "publish-date");
-                try {
-                    book.setPublishDate(DateUtil.parseDate(date));
-                } catch (ParseException e) {
-                    throw new IncorrectDateFormatDaoException(
-                            "Date format for section 'date' in parsing xml file was choosed incorrectly", e);
-                }
-                String description = getSingleChildContent(bookElement, "description");
-                book.setDescription(description);
+                Book book = formBook(bookElement);
                 bookCatalog.add(book);
             }
             return bookCatalog;
 
-        } catch (ParserConfigurationException | SAXException | IOException e2) {
-            throw new XmlParsingDaoException("Exception occurred during reading the xml file", e2);
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            throw new XmlParsingDaoException("Exception occurred during reading the xml file", e);
         }
 
     }
@@ -80,6 +60,30 @@ public class DOMParserDaoImpl implements XmlParserDao {
         NodeList nodeList = element.getElementsByTagName(childName);
         Element child = (Element) nodeList.item(0);
         return child;
+    }
+
+    private Book formBook(Element bookElement) throws IncorrectDateFormatDaoException {
+        Book book = new Book();
+        int bookId = Integer.parseInt(bookElement.getAttribute("id"));
+        book.setId(bookId);
+        String author = getSingleChildContent(bookElement, "author");
+        book.setAuthor(author);
+        String title = getSingleChildContent(bookElement, "title");
+        book.setTitle(title);
+        String genre = getSingleChildContent(bookElement, "genre");
+        book.setGenre(genre);
+        String price = getSingleChildContent(bookElement, "price");
+        book.setPrice(Double.parseDouble(price));
+        String date = getSingleChildContent(bookElement, "publish-date");
+        try {
+            book.setPublishDate(DateUtil.parseDate(date));
+        } catch (ParseException e) {
+            throw new IncorrectDateFormatDaoException(
+                    "Date format for section 'date' in parsing xml file was choosed incorrectly", e);
+        }
+        String description = getSingleChildContent(bookElement, "description");
+        book.setDescription(description);
+        return book;
     }
 
 }
