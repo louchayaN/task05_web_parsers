@@ -25,7 +25,6 @@ public class DOMParserDaoImpl implements XmlParserDao {
 
     @Override
     public List<Book> getBookCatalog() throws XmlParsingDaoException, IncorrectDateFormatDaoException {
-
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -35,7 +34,6 @@ public class DOMParserDaoImpl implements XmlParserDao {
             Element root = document.getDocumentElement();
 
             List<Book> bookCatalog = new ArrayList<>();
-
             NodeList bookNodes = root.getElementsByTagName("book");
             for (int i = 0; i < bookNodes.getLength(); i++) {
                 Element bookElement = (Element) bookNodes.item(i);
