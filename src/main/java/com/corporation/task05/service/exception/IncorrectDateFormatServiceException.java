@@ -1,4 +1,4 @@
-package com.corporation.service.exception;
+package com.corporation.task05.service.exception;
 
 public class IncorrectDateFormatServiceException extends Exception {
 

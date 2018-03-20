@@ -1,9 +1,9 @@
 package com.corporation.task05.service;
 
-import com.corporation.service.exception.IncorrectDateFormatServiceException;
-import com.corporation.service.exception.UnsupportedParserTypeServiceException;
-import com.corporation.service.exception.XmlParsingServiceException;
 import com.corporation.task05.entity.BooksView;
+import com.corporation.task05.service.exception.IncorrectDateFormatServiceException;
+import com.corporation.task05.service.exception.UnsupportedParserTypeServiceException;
+import com.corporation.task05.service.exception.XmlParsingServiceException;
 
 public interface XmlParserService {
 

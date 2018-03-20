@@ -1,4 +1,4 @@
-package com.corporation.service.exception;
+package com.corporation.task05.service.exception;
 
 public class UnsupportedParserTypeServiceException extends Exception {
 
