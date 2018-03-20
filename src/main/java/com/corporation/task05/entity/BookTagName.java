@@ -1,4 +1,4 @@
-package com.corporation.entity;
+package com.corporation.task05.entity;
 
 public enum BookTagName {
 

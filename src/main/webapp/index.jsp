@@ -10,7 +10,7 @@
 <body>
 
 	<div align="center">
-		<form action="show_books?currentPage=1" method="get">
+		<form action="show_books" method="get">
 			<input type="hidden" name="currentPage" value="1" /> 
 			<input type="radio" name="parserType" value="SAX" checked="checked" />SAX
 			<input type="radio" name="parserType" value="StAX" />StAX 

@@ -1,4 +1,4 @@
-package com.corporation.dao.exception;
+package com.corporation.task05.dao.exception;
 
 public class XmlParsingDaoException extends Exception {
 

@@ -1,4 +1,4 @@
-package com.corporation.controller;
+package com.corporation.task05.controller;
 
 import java.io.IOException;
 
@@ -12,12 +12,12 @@ import javax.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.corporation.entity.BooksView;
-import com.corporation.service.ServiceFactory;
-import com.corporation.service.XmlParserService;
 import com.corporation.service.exception.IncorrectDateFormatServiceException;
 import com.corporation.service.exception.UnsupportedParserTypeServiceException;
 import com.corporation.service.exception.XmlParsingServiceException;
+import com.corporation.task05.entity.BooksView;
+import com.corporation.task05.service.ServiceFactory;
+import com.corporation.task05.service.XmlParserService;
 
 public class XmlParsersController extends HttpServlet {
 

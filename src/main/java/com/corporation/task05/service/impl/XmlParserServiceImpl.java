@@ -1,18 +1,18 @@
-package com.corporation.service.impl;
+package com.corporation.task05.service.impl;
 
 import java.util.List;
 
-import com.corporation.dao.DAOFactory;
-import com.corporation.dao.XmlParserDao;
-import com.corporation.dao.exception.IncorrectDateFormatDaoException;
-import com.corporation.dao.exception.UnsupportedParserTypeDaoException;
-import com.corporation.dao.exception.XmlParsingDaoException;
-import com.corporation.entity.Book;
-import com.corporation.entity.BooksView;
-import com.corporation.service.XmlParserService;
 import com.corporation.service.exception.IncorrectDateFormatServiceException;
 import com.corporation.service.exception.UnsupportedParserTypeServiceException;
 import com.corporation.service.exception.XmlParsingServiceException;
+import com.corporation.task05.dao.DAOFactory;
+import com.corporation.task05.dao.XmlParserDao;
+import com.corporation.task05.dao.exception.IncorrectDateFormatDaoException;
+import com.corporation.task05.dao.exception.UnsupportedParserTypeDaoException;
+import com.corporation.task05.dao.exception.XmlParsingDaoException;
+import com.corporation.task05.entity.Book;
+import com.corporation.task05.entity.BooksView;
+import com.corporation.task05.service.XmlParserService;
 
 public class XmlParserServiceImpl implements XmlParserService {
 

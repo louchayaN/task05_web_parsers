@@ -1,4 +1,4 @@
-package com.corporation.dao.impl;
+package com.corporation.task05.dao.impl;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -9,9 +9,9 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.corporation.dao.util.DateUtil;
-import com.corporation.entity.Book;
-import com.corporation.entity.BookTagName;
+import com.corporation.task05.dao.util.DateUtil;
+import com.corporation.task05.entity.Book;
+import com.corporation.task05.entity.BookTagName;
 
 public class BookHandler extends DefaultHandler {
 

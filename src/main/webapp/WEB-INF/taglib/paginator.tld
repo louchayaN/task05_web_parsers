@@ -12,7 +12,7 @@
 	<tag>
 		<description>Display numbers of pages in determined format</description>
 		<name>display</name>
-		<tag-class>com.corporation.tag.PaginationTag</tag-class>
+		<tag-class>com.corporation.task05.tag.PaginationTag</tag-class>
 		<body-content>empty</body-content>
 
 		<attribute>

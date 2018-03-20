@@ -1,6 +1,6 @@
-package com.corporation.service;
+package com.corporation.task05.service;
 
-import com.corporation.service.impl.XmlParserServiceImpl;
+import com.corporation.task05.service.impl.XmlParserServiceImpl;
 
 public class ServiceFactory {
 

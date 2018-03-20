@@ -1,4 +1,4 @@
-package com.corporation.dao.impl;
+package com.corporation.task05.dao.impl;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,9 +12,9 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
-import com.corporation.dao.XmlParserDao;
-import com.corporation.dao.exception.XmlParsingDaoException;
-import com.corporation.entity.Book;
+import com.corporation.task05.dao.XmlParserDao;
+import com.corporation.task05.dao.exception.XmlParsingDaoException;
+import com.corporation.task05.entity.Book;
 
 public class SAXParserDaoImpl implements XmlParserDao {
 

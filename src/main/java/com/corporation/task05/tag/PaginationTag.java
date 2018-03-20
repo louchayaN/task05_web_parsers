@@ -1,4 +1,4 @@
-package com.corporation.tag;
+package com.corporation.task05.tag;
 
 import java.io.IOException;
 

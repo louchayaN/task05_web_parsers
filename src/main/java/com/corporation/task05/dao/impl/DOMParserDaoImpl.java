@@ -1,4 +1,4 @@
-package com.corporation.dao.impl;
+package com.corporation.task05.dao.impl;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,11 +15,11 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import com.corporation.dao.XmlParserDao;
-import com.corporation.dao.exception.IncorrectDateFormatDaoException;
-import com.corporation.dao.exception.XmlParsingDaoException;
-import com.corporation.dao.util.DateUtil;
-import com.corporation.entity.Book;
+import com.corporation.task05.dao.XmlParserDao;
+import com.corporation.task05.dao.exception.IncorrectDateFormatDaoException;
+import com.corporation.task05.dao.exception.XmlParsingDaoException;
+import com.corporation.task05.dao.util.DateUtil;
+import com.corporation.task05.entity.Book;
 
 public class DOMParserDaoImpl implements XmlParserDao {
 

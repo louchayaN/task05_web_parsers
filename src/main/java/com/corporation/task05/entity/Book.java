@@ -1,4 +1,4 @@
-package com.corporation.entity;
+package com.corporation.task05.entity;
 
 import java.io.Serializable;
 import java.util.Date;

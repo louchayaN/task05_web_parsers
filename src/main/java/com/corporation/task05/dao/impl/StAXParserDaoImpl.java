@@ -1,4 +1,4 @@
-package com.corporation.dao.impl;
+package com.corporation.task05.dao.impl;
 
 import java.io.InputStream;
 import java.text.ParseException;
@@ -11,12 +11,12 @@ import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
-import com.corporation.dao.XmlParserDao;
-import com.corporation.dao.exception.XmlParsingDaoException;
-import com.corporation.dao.exception.IncorrectDateFormatDaoException;
-import com.corporation.dao.util.DateUtil;
-import com.corporation.entity.Book;
-import com.corporation.entity.BookTagName;
+import com.corporation.task05.dao.XmlParserDao;
+import com.corporation.task05.dao.exception.IncorrectDateFormatDaoException;
+import com.corporation.task05.dao.exception.XmlParsingDaoException;
+import com.corporation.task05.dao.util.DateUtil;
+import com.corporation.task05.entity.Book;
+import com.corporation.task05.entity.BookTagName;
 
 public class StAXParserDaoImpl implements XmlParserDao {
 

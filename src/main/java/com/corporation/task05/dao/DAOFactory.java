@@ -1,9 +1,9 @@
-package com.corporation.dao;
+package com.corporation.task05.dao;
 
-import com.corporation.dao.exception.UnsupportedParserTypeDaoException;
-import com.corporation.dao.impl.DOMParserDaoImpl;
-import com.corporation.dao.impl.SAXParserDaoImpl;
-import com.corporation.dao.impl.StAXParserDaoImpl;
+import com.corporation.task05.dao.exception.UnsupportedParserTypeDaoException;
+import com.corporation.task05.dao.impl.DOMParserDaoImpl;
+import com.corporation.task05.dao.impl.SAXParserDaoImpl;
+import com.corporation.task05.dao.impl.StAXParserDaoImpl;
 
 public class DAOFactory {
 
