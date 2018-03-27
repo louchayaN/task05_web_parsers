@@ -20,7 +20,7 @@ import com.corporation.task05.entity.BookTagName;
 
 public class StAXParserDaoImpl implements XmlParserDao {
 
-    private List<Book> bookCatalog = new ArrayList<>();
+    private List<Book> bookCatalog;
     private Book book;
     private BookTagName tagName;
     private XMLStreamReader reader;
@@ -43,6 +43,7 @@ public class StAXParserDaoImpl implements XmlParserDao {
 
     private List<Book> parseAllXmlFile(XMLStreamReader reader)
             throws XMLStreamException, IncorrectDateFormatDaoException {
+        bookCatalog = new ArrayList<>();
         while (reader.hasNext()) {
             int parseEventType = reader.next();
             switch (parseEventType) {
@@ -52,7 +53,7 @@ public class StAXParserDaoImpl implements XmlParserDao {
                 break;
             case XMLStreamConstants.CHARACTERS:
                 String tagBody = reader.getText().trim();
-                if (!tagBody.isEmpty()) {
+                if (! tagBody.isEmpty()) {
                     analizeTagBody(tagBody);
                 }
                 break;

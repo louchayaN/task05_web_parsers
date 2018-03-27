@@ -6,6 +6,8 @@ public class ServiceFactory {
 
     private static final ServiceFactory instance = new ServiceFactory();
 
+    private static final XmlParserService xmlParserService = new XmlParserServiceImpl();
+
     private ServiceFactory() {
     }
 
@@ -13,7 +15,7 @@ public class ServiceFactory {
         return instance;
     }
 
-    public XmlParserService getXmlParserService(String parserType) {
-        return new XmlParserServiceImpl(parserType);
+    public XmlParserService getXmlParserService() {
+        return xmlParserService;
     }
 }

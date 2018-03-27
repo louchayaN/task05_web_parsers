@@ -15,6 +15,7 @@ public class PaginationTag extends TagSupport {
     private int viewPageCount;
     private String urlPattern;
 
+    @Override
     public int doStartTag() throws JspException {
         int startIndex = 1;
         int endIndex = startIndex + viewPageCount - 1;
@@ -67,7 +68,7 @@ public class PaginationTag extends TagSupport {
         StringBuilder link = new StringBuilder();
         link.append("<a href='");
         link.append(urlPattern);
-        link.append("?currentPage=");
+        link.append("&currentPage=");
         link.append(pageIndex);
         link.append("'><font color='" + (pageIndex == currentPage ? "red" : "blue") + "'>");
         link.append(linkContent);

@@ -7,7 +7,7 @@ import com.corporation.task05.service.exception.XmlParsingServiceException;
 
 public interface XmlParserService {
 
-    BooksView getBooksForPage(int page) throws XmlParsingServiceException, IncorrectDateFormatServiceException,
-            UnsupportedParserTypeServiceException;
+    BooksView getBooksForPage(int page, String parserType) throws XmlParsingServiceException,
+            IncorrectDateFormatServiceException, UnsupportedParserTypeServiceException;
 
 }

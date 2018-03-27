@@ -18,15 +18,10 @@ public class XmlParserServiceImpl implements XmlParserService {
 
     private static final int BOOKS_PER_PAGE = 2;
 
-    private String parserType;
-
-    public XmlParserServiceImpl(String parserType) {
-        this.parserType = parserType;
-    }
-
     @Override
-    public BooksView getBooksForPage(int currentPage) throws XmlParsingServiceException,
+    public BooksView getBooksForPage(int currentPage, String parserType) throws XmlParsingServiceException,
             IncorrectDateFormatServiceException, UnsupportedParserTypeServiceException {
+
         try {
             DAOFactory daoFactory = DAOFactory.getInstance();
             XmlParserDao parser = daoFactory.getParser(parserType);
@@ -40,7 +35,6 @@ public class XmlParserServiceImpl implements XmlParserService {
             BooksView booksView = new BooksView();
             booksView.setCurrentPage(currentPage);
             booksView.setTotalPageCount(totalPageCount);
-            booksView.setBooksPerPage(BOOKS_PER_PAGE);
             booksView.setCurrentViewBooks(currentViewBooks);
             return booksView;
 

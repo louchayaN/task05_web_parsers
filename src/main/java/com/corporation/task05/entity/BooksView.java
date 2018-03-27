@@ -5,7 +5,6 @@ import java.util.List;
 public class BooksView {
 
     private int currentPage;
-    private int booksPerPage;
     private int totalPageCount;
     private List<Book> currentViewBooks;
 
@@ -18,14 +17,6 @@ public class BooksView {
 
     public void setCurrentPage(int currentPage) {
         this.currentPage = currentPage;
-    }
-
-    public int getBooksPerPage() {
-        return booksPerPage;
-    }
-
-    public void setBooksPerPage(int booksPerPage) {
-        this.booksPerPage = booksPerPage;
     }
 
     public int getTotalPageCount() {
@@ -48,7 +39,6 @@ public class BooksView {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + booksPerPage;
         result = prime * result + currentPage;
         result = prime * result + ((currentViewBooks == null) ? 0 : currentViewBooks.hashCode());
         result = prime * result + totalPageCount;
@@ -64,14 +54,12 @@ public class BooksView {
         if (getClass() != obj.getClass())
             return false;
         BooksView other = (BooksView) obj;
-        if (booksPerPage != other.booksPerPage)
-            return false;
         if (currentPage != other.currentPage)
             return false;
         if (currentViewBooks == null) {
             if (other.currentViewBooks != null)
                 return false;
-        } else if (!currentViewBooks.equals(other.currentViewBooks))
+        } else if (! currentViewBooks.equals(other.currentViewBooks))
             return false;
         if (totalPageCount != other.totalPageCount)
             return false;
@@ -80,8 +68,8 @@ public class BooksView {
 
     @Override
     public String toString() {
-        return "BooksView [currentPage=" + currentPage + ", booksPerPage=" + booksPerPage + ", totalPages="
-                + totalPageCount + ", currentViewBooks=" + currentViewBooks + "]";
+        return "BooksView [currentPage=" + currentPage + ", totalPages=" + totalPageCount + ", currentViewBooks="
+                + currentViewBooks + "]";
     }
 
 }

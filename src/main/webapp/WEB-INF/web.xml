@@ -6,11 +6,11 @@
 	version="4.0">
 
 	<servlet>
-		<servlet-name>XmlParsersController</servlet-name>
-		<servlet-class>com.corporation.task05.controller.XmlParsersController</servlet-class>
+		<servlet-name>FrontController</servlet-name>
+		<servlet-class>com.corporation.task05.controller.FrontController</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>XmlParsersController</servlet-name>
+		<servlet-name>FrontController</servlet-name>
 		<url-pattern>/show_books</url-pattern>
 	</servlet-mapping>
 

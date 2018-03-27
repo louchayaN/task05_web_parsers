@@ -48,7 +48,7 @@ th, td {
 
 	<div align="center">
 		<paginator:display currentPage="${booksView.currentPage}" totalPageCount="${booksView.totalPageCount}" 
-			viewPageCount="4" urlPattern="show_books" />
+			viewPageCount="4" urlPattern="show_books?command=parseXml" />
 	</div>
 
 	<a href="index.jsp">To home page</a>
